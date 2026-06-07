@@ -1,6 +1,6 @@
 # vollmed.api-alura
 
-Este projeto consiste em uma API REST robusta para a **Vollmed**, uma clínica médica virtual que necessita de um sistema de gerenciamento eficiente de médicos e pacientes. 
+Este projeto consiste em uma API REST CRUD robusta para a **Vollmed**, uma clínica médica virtual que necessita de um sistema de gerenciamento eficiente de médicos e pacientes. 
 
 A aplicação foi desenvolvida durante o curso de **Desenvolvimento de APIs Rest em Java com Spring Boot 3** da Alura, focando em boas práticas de programação, design de API e persistência de dados.
 
@@ -19,12 +19,21 @@ O projeto utiliza as seguintes tecnologias do ecossistema Java e Spring:
 - **Spring Boot DevTools**: Para agilidade no ciclo de desenvolvimento.
 - **Insomnia**: Utilizado como ferramenta de testes para as requisições HTTP.
 
-## 🛠️ Funcionalidades
+## 🛠️ Funcionalidades (CRUD)
 
-- Cadastro, listagem, atualização e exclusão (soft delete) de **Médicos**.
-- Cadastro, listagem, atualização e exclusão (soft delete) de **Pacientes**.
-- Paginação e ordenação de dados.
-- Endereços embutidos (Embeddables) em ambas as entidades.
+A aplicação permite o gerenciamento completo das entidades principais através de operações CRUD:
+
+### 🩺 Médicos (`/medicos`)
+- **Cadastrar**: Envio de dados via `POST` para registro de novos médicos.
+- **Listar**: Requisição `GET` que retorna médicos ativos com suporte a paginação e ordenação.
+- **Atualizar**: Requisição `PUT` para edição de informações como nome, telefone e endereço.
+- **Excluir**: Requisição `DELETE` que realiza a **exclusão lógica** (setando o registro como inativo).
+
+### 🏥 Pacientes (`/pacientes`)
+- **Cadastrar**: Envio de dados via `POST` para registro de novos pacientes.
+- **Listar**: Requisição `GET` para listar pacientes cadastrados.
+- **Atualizar**: Requisição `PUT` para modificação de dados cadastrais.
+**Excluir**: Requisição `DELETE` que realiza a **exclusão lógica** (setando o registro como inativo).
 
 ## ⚙️ Instalação e Execução
 
